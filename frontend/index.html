@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI-powered pharmacy assistant for conversational medicine ordering and refill tracking.">
+    <title>Agentic AI Pharmacy Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Pharmacy Assistant</h1>
+            <div class="view-toggle">
+                <button id="btn-chat" class="active">Chat View</button>
+                <button id="btn-admin">Admin View</button>
+            </div>
+        </header>
+
+        <main id="app-content">
+            <!-- Chat View -->
+            <section id="chat-view" class="view">
+                <div id="chat-messages" class="chat-container">
+                    <div class="message agent">
+                        <div class="bubble">Hello! I am your AI Pharmacy Assistant. How can I help you today?</div>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <button id="btn-voice" title="Voice Input">🎤</button>
+                    <div class="customer-id-wrap">
+                        <label for="customer-id">ID:</label>
+                        <input type="number" id="customer-id" value="1" min="1" title="Customer ID">
+                    </div>
+                    <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off">
+                    <button id="btn-send">Send</button>
+                </div>
+            </section>
+
+            <!-- Admin View -->
+            <section id="admin-view" class="view" style="display: none;">
+                <div class="admin-section">
+                    <h2>Refill Alerts</h2>
+                    <div class="table-container">
+                        <table id="table-refills">
+                            <thead>
+                                <tr>
+                                    <th>Customer ID</th>
+                                    <th>Medicine</th>
+                                    <th>Days Overdue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row data goes here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <h2>Inventory Levels</h2>
+                    <div class="table-container">
+                        <table id="table-inventory">
+                            <thead>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <th>Stock</th>
+                                    <th>Prescription Req.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row data goes here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
